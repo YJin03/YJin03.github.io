@@ -5,6 +5,8 @@
 <meta name="theme-color" content="#fcf8fb">
 <meta name="description" content="Python으로 데이터를 탐색하고 질문을 발견하는 주니어 데이터 분석가 yjh의 포트폴리오">
 <title>yjh — Data, with purpose.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 :root{--paper:#fcf8fb;--ink:#302a33;--muted:#827987;--line:#e9dfe9;--orange:#c77d9e;--green:#8877a8;--serif:Georgia,"Times New Roman",serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 48px));margin:auto}
@@ -31,6 +33,20 @@
 @media(max-width:700px){.keep-growing-title{font-size:clamp(32px,7vw,40px)!important}}
 .certification-title{font-size:clamp(30px,3.5vw,40px)!important;line-height:1.22;letter-spacing:-.055em}
 @media(max-width:700px){.certification-title{font-size:clamp(29px,6.5vw,34px)!important}}
+
+/* Soft editorial typography and pastel marker highlights for section subtitles */
+.chapter h2,.footer h2{
+  font-family:"Gowun Batang","Noto Serif KR",serif;
+  font-weight:700;
+  letter-spacing:-.055em;
+  line-height:1.24;
+}
+.heading-highlight{
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
+  background:linear-gradient(transparent 67%,rgba(226,190,211,.72) 67%,rgba(226,190,211,.72) 91%,transparent 91%);
+  padding:0 .035em;
+}
 </style>
 </head>
 <body>
@@ -60,5 +76,17 @@
 <footer class="wrap footer"><div class="eyebrow">LET'S CONNECT</div><h2>데이터로 함께<br>배워가요.</h2><a class="contact" href="https://github.com/YJin03" target="_blank" rel="noreferrer">GitHub · @YJin03 ↗</a><div class="copyright">© 2026 yjh. Built with curiosity and Python-minded thinking.</div></footer>
 <script>
 if("IntersectionObserver" in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}})},{threshold:.14});document.querySelectorAll(".reveal").forEach(item=>observer.observe(item));}else{document.querySelectorAll(".reveal").forEach(item=>item.classList.add("visible"));}
+
+document.querySelectorAll(".chapter h2,.footer h2").forEach(heading=>{
+  Array.from(heading.childNodes).forEach(node=>{
+    if(node.nodeType===Node.TEXT_NODE && node.textContent.trim()){
+      const mark=document.createElement("span");
+      mark.className="heading-highlight";
+      mark.textContent=node.textContent;
+      heading.replaceChild(mark,node);
+    }
+  });
+});
+
 </script>
 </body></html>
