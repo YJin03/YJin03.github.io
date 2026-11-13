@@ -1,79 +1,52 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f6f2">
-  <meta name="description" content="Python으로 데이터를 읽고 질문을 발견하는 주니어 데이터 분석가 yjh의 포트폴리오">
-  <title>yjh — Data, with purpose.</title>
-  <style>
-    :root{--paper:#f7f6f2;--ink:#20231f;--muted:#777b73;--line:#dedfd8;--orange:#e56b45;--green:#54745d;--blue:#587b91;--serif:Georgia,"Times New Roman",serif}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.6}
-    a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 48px));margin:auto}.nav{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-size:13px}.brand{font-weight:800;letter-spacing:-.04em;font-size:20px}.navlinks{display:flex;gap:25px;color:var(--muted)}.navlinks a:hover{color:var(--orange)}
-    .hero{min-height:calc(90svh - 68px);display:flex;flex-direction:column;justify-content:center;padding:100px 0 110px}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);font-weight:750}.hero h1{font-size:clamp(48px,9vw,104px);line-height:1.04;letter-spacing:-.075em;margin:22px 0;max-width:900px}.hero h1 em{font-family:var(--serif);font-weight:400;color:var(--green)}.lead{font-size:clamp(17px,2.2vw,22px);color:#555a52;max-width:570px}.scroll{margin-top:70px;color:var(--muted);font-size:11px;letter-spacing:.15em}
-    .chapter{padding:125px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:.8fr 1.2fr;gap:9vw;align-items:start}.chapter-no{color:var(--orange);font-size:12px;letter-spacing:.13em}.chapter h2{font-size:clamp(34px,5vw,58px);line-height:1.12;letter-spacing:-.06em;margin:12px 0 20px}.chapter p{font-size:17px;color:#656960;max-width:590px}.bigline{font-size:clamp(26px,4vw,43px)!important;line-height:1.3;letter-spacing:-.045em;color:var(--ink)!important}.accent{color:var(--orange)}
-    .visual{background:#e9e8e0;border-radius:24px;min-height:300px;padding:28px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.visual.dark{background:#252c28;color:#f7f6f2}.bars{display:flex;align-items:end;gap:12px;height:170px;width:min(390px,100%)}.bars i{display:block;flex:1;border-radius:8px 8px 2px 2px;background:var(--green);height:var(--h);opacity:.9}.bars i:nth-child(2n){background:var(--orange)}.visual-note{position:absolute;left:28px;top:24px;font-size:11px;letter-spacing:.13em;color:var(--muted)}.dark .visual-note{color:#c0c7bd}
-    .stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.chip{border:1px solid var(--line);border-radius:100px;padding:9px 15px;font-size:13px;color:#50564e}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}.step{border-top:2px solid var(--green);padding-top:14px}.step b{display:block;font-size:14px}.step span{font-size:12px;color:var(--muted)}
-    .interest{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}.interest article{padding:25px;border:1px solid var(--line);border-radius:18px}.interest small{color:var(--orange);letter-spacing:.1em}.interest h3{font-size:23px;margin:8px 0}.interest p{font-size:14px;margin:0}
-    .quote{font-family:var(--serif);font-size:clamp(28px,5vw,52px);line-height:1.2;letter-spacing:-.035em;max-width:760px}.footer{padding:70px 0 38px;border-top:1px solid var(--line)}.footer h2{font-size:clamp(34px,6vw,64px);letter-spacing:-.06em;margin:10px 0 20px}.contact{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:white;padding:13px 19px;border-radius:100px;font-size:13px}.copyright{margin-top:70px;color:var(--muted);font-size:11px}
-    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:none}
-    @media(max-width:700px){.wrap{width:min(100% - 36px,560px)}.nav{height:60px}.navlinks{gap:13px;font-size:11px}.hero{min-height:78svh;padding:80px 0}.hero h1{font-size:clamp(48px,14vw,76px)}.chapter{padding:82px 0;grid-template-columns:1fr;gap:25px}.chapter p{font-size:15px}.visual{min-height:240px;border-radius:18px}.steps{grid-template-columns:repeat(2,1fr);row-gap:25px}.interest{grid-template-columns:1fr}.scroll{margin-top:48px}.footer{padding-top:55px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2">
+<meta name="description" content="Python으로 데이터를 탐색하고 질문을 발견하는 주니어 데이터 분석가 yjh의 포트폴리오">
+<title>yjh — Data, with purpose.</title>
+<style>
+:root{--paper:#f7f6f2;--ink:#20231f;--muted:#777b73;--line:#dedfd8;--orange:#df704b;--green:#54745d;--serif:Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 48px));margin:auto}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-size:13px}.brand{font-weight:800;font-size:20px;letter-spacing:-.04em}.navlinks{display:flex;gap:22px;color:var(--muted)}.navlinks a:hover{color:var(--orange)}
+.hero{min-height:88svh;display:flex;flex-direction:column;justify-content:center;padding:90px 0}.eyebrow,.chapter-no{font-size:12px;letter-spacing:.15em;color:var(--orange);font-weight:750}.hero h1{font-size:clamp(48px,9vw,104px);line-height:1.04;letter-spacing:-.075em;margin:22px 0;max-width:900px}.hero h1 em{font-family:var(--serif);font-weight:400;color:var(--green)}.lead{font-size:clamp(17px,2.2vw,22px);color:#555a52;max-width:590px}.scroll{margin-top:60px;color:var(--muted);font-size:11px;letter-spacing:.15em}
+.chapter{padding:112px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:.8fr 1.2fr;gap:9vw;align-items:start}.chapter h2{font-size:clamp(34px,5vw,58px);line-height:1.12;letter-spacing:-.06em;margin:12px 0 20px}.chapter p{font-size:16px;color:#656960;max-width:590px}.bigline{font-size:clamp(25px,3.8vw,40px)!important;line-height:1.35;letter-spacing:-.04em;color:var(--ink)!important}.accent{color:var(--orange)}
+.visual{background:#e9e8e0;border-radius:22px;min-height:270px;padding:28px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.visual.dark{background:#252c28;color:var(--paper)}.visual-note{position:absolute;left:26px;top:20px;font-size:10px;letter-spacing:.13em;color:var(--muted)}.dark .visual-note{color:#c0c7bd}.bars{display:flex;align-items:end;gap:11px;height:150px;width:min(390px,100%)}.bars i{display:block;flex:1;border-radius:7px 7px 2px 2px;background:var(--green);height:var(--h)}.bars i:nth-child(2n){background:var(--orange)}
+.skill-intro{margin:0 0 18px}.badges{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.badges img{height:28px;max-width:100%}.skill-note{font-size:12px!important;color:var(--muted)!important;margin-top:16px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.step{border-top:2px solid var(--green);padding-top:12px}.step b{display:block;font-size:14px}.step span{font-size:11px;color:var(--muted)}
+.cert-list{display:grid;gap:12px}.cert{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.35)}.cert strong{font-size:16px}.cert span{font-size:11px;color:var(--muted);text-align:right}.cert-mark{display:flex;align-items:center;gap:13px}.seal{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#e8e6dc;color:var(--green);font-weight:800;font-size:12px}
+.interest{display:grid;grid-template-columns:1fr 1fr;gap:14px}.interest article{padding:23px;border:1px solid var(--line);border-radius:17px}.interest small{color:var(--orange);letter-spacing:.1em}.interest h3{font-size:22px;margin:7px 0}.interest p{font-size:14px;margin:0}
+.quote{font-family:var(--serif);font-size:clamp(28px,5vw,50px);line-height:1.2;letter-spacing:-.035em;max-width:760px}.contact{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:white;padding:12px 18px;border-radius:100px;font-size:13px}.footer{padding:68px 0 36px;border-top:1px solid var(--line)}.footer h2{font-size:clamp(34px,6vw,64px);letter-spacing:-.06em;line-height:1.12;margin:10px 0 20px}.copyright{margin-top:65px;color:var(--muted);font-size:11px}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:none}
+@media(max-width:700px){.wrap{width:calc(100% - 36px)}.nav{height:60px}.navlinks{gap:12px;font-size:11px}.hero{min-height:78svh;padding:70px 0}.hero h1{font-size:clamp(48px,14vw,76px)}.chapter{padding:78px 0;grid-template-columns:1fr;gap:22px}.chapter p{font-size:15px}.visual{min-height:225px;border-radius:17px}.steps{grid-template-columns:repeat(2,1fr);row-gap:22px}.interest{grid-template-columns:1fr}.cert{padding:15px}.cert strong{font-size:14px}.scroll{margin-top:45px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+</style>
 </head>
 <body>
-  <header class="wrap nav">
-    <a class="brand" href="#top" aria-label="yjh home">yjh.</a>
-    <nav class="navlinks" aria-label="주요 메뉴"><a href="#about">소개</a><a href="#tools">도구</a><a href="#focus">관심 분야</a><a href="#contact">연락</a></nav>
-  </header>
-  <main id="top">
-    <section class="wrap hero">
-      <div class="eyebrow">A curious mind, learning with data</div>
-      <h1>숫자 너머의<br><em>이야기</em>를 찾습니다.</h1>
-      <p class="lead">안녕하세요, 데이터 분석가를 준비하는 yjh입니다. Python으로 데이터를 정리하고, 패턴을 발견하고, 의미 있는 질문으로 연결하는 법을 배우고 있습니다.</p>
-      <div class="scroll">SCROLL TO EXPLORE ↓</div>
-    </section>
-
-    <section class="chapter wrap" id="about">
-      <div class="reveal"><div class="chapter-no">01 / ABOUT</div><h2>배우는 중이기에,<br>더 많이 관찰합니다.</h2></div>
-      <div class="reveal"><p class="bigline">약 6개월의 데이터 분석 부트캠프 여정. 아직 모든 답을 알지는 못하지만, <span class="accent">좋은 질문을 만드는 과정</span>을 차근차근 익히고 있습니다.</p><p>데이터를 무작정 분석하기보다 문제를 이해하고, 필요한 기준을 세우고, 결과를 설명하는 흐름을 중요하게 생각합니다. 작은 실습도 배운 점과 함께 기록합니다.</p></div>
-    </section>
-
-    <section class="chapter wrap" id="tools">
-      <div class="reveal"><div class="chapter-no">02 / TOOLKIT</div><h2>도구는 단순하게.<br>탐색은 깊게.</h2><p>현재 학습의 중심은 Python입니다. 분석에 필요한 기본기를 반복해서 익히고 있습니다.</p><div class="stack"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">Jupyter Notebook</span><span class="chip">Git & GitHub</span></div></div>
-      <div class="reveal"><div class="visual"><div class="visual-note">FROM RAW DATA TO INSIGHT</div><div class="bars" aria-label="데이터 시각화 예시"><i style="--h:35%"></i><i style="--h:62%"></i><i style="--h:48%"></i><i style="--h:82%"></i><i style="--h:68%"></i><i style="--h:96%"></i><i style="--h:76%"></i></div></div></div>
-    </section>
-
-    <section class="chapter wrap">
-      <div class="reveal"><div class="chapter-no">03 / MY PROCESS</div><h2>분석은 한 번에<br>완성되지 않습니다.</h2><p>데이터를 이해하는 첫 단계부터 결과를 설명하는 마지막 단계까지, 과정을 놓치지 않으려 합니다.</p></div>
-      <div class="reveal"><div class="visual dark"><div class="visual-note">A SMALL, REPEATABLE PROCESS</div><p class="quote">“정리하고, 살펴보고,<br>발견하고, 설명하기.”</p></div><div class="steps"><div class="step"><b>01 정리</b><span>결측치 · 타입 · 중복</span></div><div class="step"><b>02 탐색</b><span>분포 · 관계 · 패턴</span></div><div class="step"><b>03 시각화</b><span>차트 · 비교 · 흐름</span></div><div class="step"><b>04 전달</b><span>인사이트 · 기록</span></div></div></div>
-    </section>
-
-    <section class="chapter wrap" id="focus">
-      <div class="reveal"><div class="chapter-no">04 / CURIOSITY</div><h2>관심은 현실의<br>데이터를 향합니다.</h2><p>숫자가 실제 산업과 시장에서 어떤 의미를 갖는지 알아가는 데 흥미가 있습니다.</p></div>
-      <div class="reveal"><div class="interest"><article><small>01 — FINANCE</small><h3>금융 데이터</h3><p>시장 흐름과 지표를 살펴보며 숫자에 담긴 변화를 읽고 싶습니다.</p></article><article><small>02 — TRADE</small><h3>무역 데이터</h3><p>수출입과 국가·품목별 흐름을 분석해 경제의 연결을 이해하고 싶습니다.</p></article></div></div>
-    </section>
-
-    <section class="wrap chapter">
-      <div class="reveal"><div class="chapter-no">05 / KEEP GROWING</div><h2>배운 것을 기록하면<br>성장이 보입니다.</h2></div>
-      <div class="reveal"><p class="quote">오늘의 작은 분석이<br>내일의 더 나은 질문이 되도록.</p><p>실습과 프로젝트, 시행착오를 GitHub에 차곡차곡 쌓아가고 있습니다. 결과만큼 과정도 투명하게 공유하겠습니다.</p><a class="contact" href="https://github.com/YJin03" target="_blank" rel="noreferrer">GitHub에서 기록 보기 ↗</a></div>
-    </section>
-  </main>
-  <footer class="wrap footer" id="contact">
-    <div class="eyebrow">LET'S CONNECT</div><h2>데이터로 함께<br>배워가요.</h2>
-    <a class="contact" href="https://github.com/YJin03" target="_blank" rel="noreferrer">GitHub · @YJin03 ↗</a>
-    <div class="copyright">© 2026 yjh. Built with curiosity and Python-minded thinking.</div>
-  </footer>
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.14 });
-    document.querySelectorAll('.reveal').forEach((item) => observer.observe(item));
-  </script>
-</body>
-</html>
+<header class="wrap nav"><a class="brand" href="#top" aria-label="yjh home">yjh.</a><nav class="navlinks" aria-label="주요 메뉴"><a href="#about">소개</a><a href="#tools">기술</a><a href="#certs">자격증</a><a href="#focus">관심 분야</a></nav></header>
+<main id="top">
+<section class="wrap hero"><div class="eyebrow">A CURIOUS MIND, LEARNING WITH DATA</div><h1>숫자 너머의<br><em>이야기</em>를 찾습니다.</h1><p class="lead">안녕하세요, 데이터 분석가를 준비하는 yjh입니다. Python으로 데이터를 정리하고 패턴을 발견하며, 숫자를 의미 있는 질문으로 연결하는 법을 배우고 있습니다.</p><div class="scroll">SCROLL TO EXPLORE ↓</div></section>
+<section class="chapter wrap" id="about"><div class="reveal"><div class="chapter-no">01 / ABOUT</div><h2>배우는 중이기에,<br>더 많이 관찰합니다.</h2></div><div class="reveal"><p class="bigline">약 6개월의 데이터 분석 부트캠프 여정. 아직 모든 답을 알지는 못하지만, <span class="accent">좋은 질문을 만드는 과정</span>을 차근차근 익히고 있습니다.</p><p>문제를 이해하고 데이터를 살펴본 뒤, 분석 결과를 다른 사람도 이해할 수 있게 설명하는 흐름을 중요하게 생각합니다. 실습과 시행착오도 배움의 일부로 기록합니다.</p></div></section>
+<section class="chapter wrap" id="tools"><div class="reveal"><div class="chapter-no">02 / TOOLKIT</div><h2>도구는 단순하게.<br>탐색은 깊게.</h2><p class="skill-intro">현재 학습의 중심은 Python입니다. 데이터 분석에 자주 사용하는 도구를 익히며 작은 문제부터 직접 해결하고 있습니다.</p><div class="badges">
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas">
+<img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy">
+<img src="https://img.shields.io/badge/Matplotlib-ffffff?style=flat-square&logo= plotly&logoColor=11557C" alt="Matplotlib">
+<img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter Notebook">
+<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git">
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub">
+</div><p class="skill-note">학습 및 실습 경험을 기준으로 표시한 기술 스택입니다. 숙련도를 과장하지 않고 프로젝트를 통해 계속 확장하고 있습니다.</p></div><div class="reveal"><div class="visual"><div class="visual-note">FROM RAW DATA TO INSIGHT</div><div class="bars" role="img" aria-label="데이터 시각화 예시"><i style="--h:35%"></i><i style="--h:62%"></i><i style="--h:48%"></i><i style="--h:82%"></i><i style="--h:68%"></i><i style="--h:96%"></i><i style="--h:76%"></i></div></div></div></section>
+<section class="chapter wrap" id="certs"><div class="reveal"><div class="chapter-no">03 / CERTIFICATIONS</div><h2>배움은 자격으로,<br>기본기는 꾸준하게.</h2><p>데이터와 IT 분야의 기초 역량을 다지기 위해 준비한 자격증입니다.</p></div><div class="reveal"><div class="cert-list">
+<div class="cert"><div class="cert-mark"><div class="seal">AI</div><strong>AICE Associate</strong></div><span>AI 활용 역량</span></div>
+<div class="cert"><div class="cert-mark"><div class="seal">ADsP</div><strong>데이터분석 준전문가</strong></div><span>데이터 분석 기초</span></div>
+<div class="cert"><div class="cert-mark"><div class="seal">IT</div><strong>정보처리기사</strong></div><span>소프트웨어·정보기술</span></div>
+</div><p class="skill-note">자격증 취득일 및 인증번호는 개인정보 보호를 위해 별도 표기하지 않았습니다.</p></div></section>
+<section class="chapter wrap"><div class="reveal"><div class="chapter-no">04 / MY PROCESS</div><h2>분석은 한 번에<br>완성되지 않습니다.</h2><p>데이터를 이해하는 첫 단계부터 결과를 설명하는 마지막 단계까지, 과정을 놓치지 않으려 합니다.</p></div><div class="reveal"><div class="visual dark"><div class="visual-note">A SMALL, REPEATABLE PROCESS</div><p class="quote">“정리하고, 살펴보고,<br>발견하고, 설명하기.”</p></div><div class="steps"><div class="step"><b>01 정리</b><span>결측치 · 타입 · 중복</span></div><div class="step"><b>02 탐색</b><span>분포 · 관계 · 패턴</span></div><div class="step"><b>03 시각화</b><span>차트 · 비교 · 흐름</span></div><div class="step"><b>04 전달</b><span>인사이트 · 기록</span></div></div></div></section>
+<section class="chapter wrap" id="focus"><div class="reveal"><div class="chapter-no">05 / CURIOSITY</div><h2>관심은 현실의<br>데이터를 향합니다.</h2><p>숫자가 실제 산업과 시장에서 어떤 의미를 갖는지 알아가는 데 흥미가 있습니다.</p></div><div class="reveal"><div class="interest"><article><small>01 — FINANCE</small><h3>금융 데이터</h3><p>시장 흐름과 지표를 살펴보며 숫자에 담긴 변화를 읽고 싶습니다.</p></article><article><small>02 — TRADE</small><h3>무역 데이터</h3><p>수출입과 국가·품목별 흐름을 분석해 경제의 연결을 이해하고 싶습니다.</p></article></div></div></section>
+<section class="wrap chapter"><div class="reveal"><div class="chapter-no">06 / KEEP GROWING</div><h2>배운 것을 기록하면<br>성장이 보입니다.</h2></div><div class="reveal"><p class="quote">오늘의 작은 분석이<br>내일의 더 나은 질문이 되도록.</p><p>실습과 프로젝트, 시행착오를 GitHub에 차곡차곡 쌓아가고 있습니다. 결과만큼 과정도 투명하게 공유하겠습니다.</p><a class="contact" href="https://github.com/YJin03" target="_blank" rel="noreferrer">GitHub에서 기록 보기 ↗</a></div></section>
+</main>
+<footer class="wrap footer"><div class="eyebrow">LET'S CONNECT</div><h2>데이터로 함께<br>배워가요.</h2><a class="contact" href="https://github.com/YJin03" target="_blank" rel="noreferrer">GitHub · @YJin03 ↗</a><div class="copyright">© 2026 yjh. Built with curiosity and Python-minded thinking.</div></footer>
+<script>
+if("IntersectionObserver" in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}})},{threshold:.14});document.querySelectorAll(".reveal").forEach(item=>observer.observe(item));}else{document.querySelectorAll(".reveal").forEach(item=>item.classList.add("visible"));}
+</script>
+</body></html>
